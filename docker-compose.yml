@@ -1,0 +1,230 @@
+version: "3"
+services:
+  php82:
+    build:
+      context: .
+      args:
+        PHP_IMAGE: php:${PHP82_VERSION}-fpm-alpine
+        TZ: "${TZ}"
+        CONTAINER_PACKAGE_URL: ${CONTAINER_PACKAGE_URL}
+        IPE_PATH: ${IPE_PATH}
+        PHP_EXTENSIONS: ${PHP82_EXTENSIONS}
+        COMPOSER_PATH: ${COMPOSER_LATEST_PATH}
+        COMPOSER_REPOSITORY_URL: ${COMPOSER_REPOSITORY_URL}
+    container_name: php82    
+    ports:
+      - ${PHP82_FPM_PORT}:9000  
+    volumes:
+      - ${PHP82_DATA_DIR}/etc/php.ini:/usr/local/etc/php/php.ini:ro
+      - ${PHP82_DATA_DIR}/etc/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ${PHP82_DATA_DIR}/logs:/var/log/php:rw
+      - ${ROOT_PATH}:/www/:rw
+    restart: ${PHP82_RESTART_POLICY}
+    cap_add:
+      - SYS_PTRACE
+    networks:
+      - dev        
+
+  php81:
+    build:
+      context: .
+      args:
+        PHP_IMAGE: php:${PHP81_VERSION}-fpm-alpine
+        TZ: "${TZ}"
+        CONTAINER_PACKAGE_URL: ${CONTAINER_PACKAGE_URL}
+        IPE_PATH: ${IPE_PATH}
+        PHP_EXTENSIONS: ${PHP81_EXTENSIONS}
+        COMPOSER_PATH: ${COMPOSER_LATEST_PATH}
+        COMPOSER_REPOSITORY_URL: ${COMPOSER_REPOSITORY_URL}
+    container_name: php81
+    ports:
+      - ${PHP81_FPM_PORT}:9000  
+    volumes:
+      - ${PHP81_DATA_DIR}/etc/php.ini:/usr/local/etc/php/php.ini:ro
+      - ${PHP81_DATA_DIR}/etc/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ${PHP81_DATA_DIR}/logs:/var/log/php:rw
+      - ${ROOT_PATH}:/www/:rw
+    restart: ${PHP81_RESTART_POLICY}
+    cap_add:
+      - SYS_PTRACE
+    networks:
+      - dev            
+
+  php80:
+    build:
+      context: .
+      args:
+        PHP_IMAGE: php:${PHP80_VERSION}-fpm-alpine
+        TZ: "${TZ}"
+        CONTAINER_PACKAGE_URL: ${CONTAINER_PACKAGE_URL}
+        IPE_PATH: ${IPE_PATH}  
+        PHP_EXTENSIONS: ${PHP80_EXTENSIONS}
+        COMPOSER_PATH: ${COMPOSER_LATEST_PATH}
+        COMPOSER_REPOSITORY_URL: ${COMPOSER_REPOSITORY_URL}
+    container_name: php80
+    ports:
+      - ${PHP80_FPM_PORT}:9000  
+    volumes:
+      - ${PHP80_DATA_DIR}/etc/php.ini:/usr/local/etc/php/php.ini:ro
+      - ${PHP80_DATA_DIR}/etc/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ${PHP80_DATA_DIR}/logs:/var/log/php:rw
+      - ${ROOT_PATH}:/www/:rw
+    restart: ${PHP80_RESTART_POLICY}
+    cap_add:
+      - SYS_PTRACE
+    networks:
+      - dev            
+
+  php74:
+    build:
+      context: .
+      args:
+        PHP_IMAGE: php:${PHP74_VERSION}-fpm-alpine
+        TZ: "${TZ}"
+        CONTAINER_PACKAGE_URL: ${CONTAINER_PACKAGE_URL}
+        IPE_PATH: ${IPE_PATH}  
+        PHP_EXTENSIONS: ${PHP74_EXTENSIONS}
+        COMPOSER_PATH: ${COMPOSER_LATEST_PATH}
+        COMPOSER_REPOSITORY_URL: ${COMPOSER_REPOSITORY_URL}
+    container_name: php74
+    ports:
+      - ${PHP74_FPM_PORT}:9000  
+    volumes:
+      - ${PHP74_DATA_DIR}/etc/php.ini:/usr/local/etc/php/php.ini:ro
+      - ${PHP74_DATA_DIR}/etc/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ${PHP74_DATA_DIR}/logs:/var/log/php:rw
+      - ${ROOT_PATH}:/www/:rw
+    restart: ${PHP74_RESTART_POLICY}
+    cap_add:
+      - SYS_PTRACE
+    networks:
+      - dev
+
+  php73:
+    build:
+      context: .
+      args:
+        PHP_IMAGE: php:${PHP73_VERSION}-fpm-alpine
+        TZ: "${TZ}"
+        CONTAINER_PACKAGE_URL: ${CONTAINER_PACKAGE_URL}
+        IPE_PATH: ${IPE_PATH}  
+        PHP_EXTENSIONS: ${PHP73_EXTENSIONS}
+        COMPOSER_PATH: ${COMPOSER_LATEST_PATH}
+        COMPOSER_REPOSITORY_URL: ${COMPOSER_REPOSITORY_URL}
+    container_name: php73
+    ports:
+      - ${PHP73_FPM_PORT}:9000  
+    volumes:
+      - ${PHP73_DATA_DIR}/etc/php.ini:/usr/local/etc/php/php.ini:ro
+      - ${PHP73_DATA_DIR}/etc/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ${PHP73_DATA_DIR}/logs:/var/log/php:rw
+      - ${ROOT_PATH}:/www/:rw
+    restart: ${PHP73_RESTART_POLICY}
+    cap_add:
+      - SYS_PTRACE
+    networks:
+      - dev
+
+  php72:
+    build:
+      context: .
+      args:
+        PHP_IMAGE: php:${PHP72_VERSION}-fpm-alpine
+        TZ: "${TZ}"
+        CONTAINER_PACKAGE_URL: ${CONTAINER_PACKAGE_URL}
+        IPE_PATH: ${IPE_PATH}  
+        PHP_EXTENSIONS: ${PHP72_EXTENSIONS}
+        COMPOSER_PATH: ${COMPOSER_LATEST_PATH}
+        COMPOSER_REPOSITORY_URL: ${COMPOSER_REPOSITORY_URL}
+    container_name: php72
+    ports:
+      - ${PHP72_FPM_PORT}:9000  
+    volumes:
+      - ${PHP72_DATA_DIR}/etc/php.ini:/usr/local/etc/php/php.ini:ro
+      - ${PHP72_DATA_DIR}/etc/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ${PHP72_DATA_DIR}/logs:/var/log/php:rw
+      - ${ROOT_PATH}:/www/:rw
+    restart: ${PHP72_RESTART_POLICY}
+    cap_add:
+      - SYS_PTRACE
+    networks:
+      - dev            
+
+  php71:
+    build:
+      context: .
+      args:
+        PHP_IMAGE: php:${PHP71_VERSION}-fpm-alpine
+        TZ: "${TZ}"
+        CONTAINER_PACKAGE_URL: ${CONTAINER_PACKAGE_URL}
+        IPE_PATH: ${IPE_PATH}  
+        PHP_EXTENSIONS: ${PHP71_EXTENSIONS}
+        COMPOSER_PATH: ${COMPOSER_V2_LTS_PATH}
+        COMPOSER_REPOSITORY_URL: ${COMPOSER_REPOSITORY_URL}
+    container_name: php71
+    ports:
+      - ${PHP71_FPM_PORT}:9000  
+    volumes:
+      - ${PHP71_DATA_DIR}/etc/php.ini:/usr/local/etc/php/php.ini:ro
+      - ${PHP71_DATA_DIR}/etc/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ${PHP71_DATA_DIR}/logs:/var/log/php:rw
+      - ${ROOT_PATH}:/www/:rw
+    restart: ${PHP71_RESTART_POLICY}
+    cap_add:
+      - SYS_PTRACE
+    networks:
+      - dev      
+
+  php70:
+    build:
+      context: .
+      args:
+        PHP_IMAGE: php:${PHP70_VERSION}-fpm-alpine
+        TZ: "${TZ}"
+        CONTAINER_PACKAGE_URL: ${CONTAINER_PACKAGE_URL}
+        IPE_PATH: ${IPE_PATH}  
+        PHP_EXTENSIONS: ${PHP70_EXTENSIONS}
+        COMPOSER_PATH: ${COMPOSER_V2_LTS_PATH}
+        COMPOSER_REPOSITORY_URL: ${COMPOSER_REPOSITORY_URL}
+    container_name: php70
+    ports:
+      - ${PHP70_FPM_PORT}:9000  
+    volumes:
+      - ${PHP70_DATA_DIR}/etc/php.ini:/usr/local/etc/php/php.ini:ro
+      - ${PHP70_DATA_DIR}/etc/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ${PHP70_DATA_DIR}/logs:/var/log/php:rw
+      - ${ROOT_PATH}:/www/:rw
+    restart: ${PHP70_RESTART_POLICY}
+    cap_add:
+      - SYS_PTRACE
+    networks:
+      - dev      
+
+  php56:
+    build:
+      context: .
+      args:
+        PHP_IMAGE: php:${PHP56_VERSION}-fpm-alpine
+        TZ: "${TZ}"
+        CONTAINER_PACKAGE_URL: ${CONTAINER_PACKAGE_URL}
+        IPE_PATH: ${IPE_PATH}   
+        PHP_EXTENSIONS: ${PHP56_EXTENSIONS}
+        COMPOSER_PATH: ${COMPOSER_V2_LTS_PATH}
+        COMPOSER_REPOSITORY_URL: ${COMPOSER_REPOSITORY_URL}
+    container_name: php56
+    ports:
+      - ${PHP56_FPM_PORT}:9000  
+    volumes:
+      - ${PHP56_DATA_DIR}/etc/php.ini:/usr/local/etc/php/php.ini:ro
+      - ${PHP56_DATA_DIR}/etc/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ${PHP56_DATA_DIR}/logs:/var/log/php:rw
+      - ${ROOT_PATH}:/www/:rw
+    restart: ${PHP56_RESTART_POLICY}
+    cap_add:
+      - SYS_PTRACE
+    networks:
+      - dev            
+
+networks:
+  dev:
+    external: true
