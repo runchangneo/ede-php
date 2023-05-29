@@ -24,7 +24,7 @@ RUN chmod +x /usr/local/bin/install-php-extensions && install-php-extensions $(e
 
 # Install composer
 ADD $COMPOSER_PATH /usr/local/bin/composer
-# RUN chmod +x /usr/local/bin/composer && /usr/local/bin/composer config -g repo.packagist composer $COMPOSER_REPOSITORY_URL
+RUN chmod +x /usr/local/bin/composer && /usr/local/bin/composer config -g repo.packagist composer $COMPOSER_REPOSITORY_URL
 
 # php image's www-data user uid & gid are 82, change them to 1000 (primary user)
 RUN apk --no-cache add shadow && usermod -u 1000 www-data && groupmod -g 1000 www-data
